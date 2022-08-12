@@ -1,0 +1,63 @@
+#schemas 
+
+#CRUD type API - create, read, update, delete
+type Query{
+    allPersons: [Person!]!
+    allpersons(last:Int) : [Person!]!
+    allPosts(last:Int) :[Post!]!
+}
+#resolver 
+    allPersons(id: String!) : User
+    allPosts(title: String!): String!
+
+type mutation{
+    createPerson(name:String!, age:Int!): Person!
+    updatePerson(id: ID!, name: String!, age :String!): Person!
+    deletePerson(id:ID): Person!
+    createPost(title:String!): Post!
+    updatePost(id:ID!, title: String!): Post!
+    deletePost(id:ID!): Post!
+}
+
+#type hotel, car, ammenities, 
+type Subscription{
+    newPerson: Person!
+    updatedPerson: Person!
+    deletedPerson: Person!
+    newPost: Post!
+    updatedPost: Post!
+    deletedPost: Post!
+}
+
+type Person{
+    name: String!
+    age: int!
+    posts: [Post!]!
+}
+
+type Post{
+    title: String!
+    author: Person! 
+}
+
+type Hotel{
+    name: String!
+    country: String!
+    zipCode: String!
+    address: String!
+    city: String!
+}
+
+Query.author(root,{id:"abc"}, context) -> author
+Author.posts(author,null,context) -> posts
+for each post in posts
+    Post.title(post,null, context) ->title
+    Post.context(post, null, context) -> content
+
+allHotels{
+    name
+    street
+    zipCode
+    city
+    country
+}    

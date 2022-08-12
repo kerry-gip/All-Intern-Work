@@ -1,0 +1,17 @@
+<Configuration ID="83286226-629f-4ab0-a4bc-45d9f09127e0">
+  <Add OfficeClientEdition="64" Channel="Broad" Version="MatchInstalled">
+
+    <Product ID="VisioPro2019Volume" PIDKEY="B3WXR-RNR9Y-KHC4D-XDR8K-6CRX2">
+      <Language ID="MatchOS" />
+      <ExcludeApp ID="Groove" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="PinIconsToTaskbar" Value="TRUE" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Property Name="AUTOACTIVATE" Value="1" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="FALSE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Updates Enabled="TRUE" />
+  <RemoveMSI />
+</Configuration>
